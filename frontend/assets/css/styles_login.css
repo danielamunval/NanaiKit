@@ -24,14 +24,3 @@
   border-radius: 6px;
 }
 
-.btn-primary {
-  margin-top: 1.5rem;
-  width: 100%;
-  padding: 0.9rem;
-  background-color: #8a3ab9;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}

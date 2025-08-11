@@ -239,12 +239,42 @@ main {
 }
 
 /* Redes sociales */
+.social {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.social h2 {
+  margin-bottom: 16px;
+  
+}
+
 .social-icons {
   display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 16px;
+  gap: 30px; /* Espacio entre íconos, opcional */
+  justify-content: center; /* Centrado horizontal, opcional */
 }
+.social-icons a:hover img {
+  filter: brightness(50%)  sepia(80%) hue-rotate(250deg);
+}
+.social-icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #a64db4; /* Morado más claro al pasar el mouse */
+}
+
+.social-icons img {
+  width: 40px; 
+  height: auto;
+}
+
 
 /* Footer */
 .footer {
@@ -260,4 +290,14 @@ main {
   gap: 32px;
   margin-bottom: 16px;
   flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333; /* o el color que quieras para los links normales */
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #8b2a94; /* color al pasar el mouse */
 }

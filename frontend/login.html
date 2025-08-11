@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nanai Kit - Iniciar Sesión</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap&family=Philosopher:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="navbar">
+    <img src="assets/images/logoSoloLetras.png" alt="Logo Nanai Kit" class="logo" />
+    <nav class="nav-menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#blog">Blog</a>
+      <a href="#test">Test</a>
+      <a href="#kits">Kits</a>
+      <a href="#nosotres">Nosotres</a>
+      <button class="btn-secondary" onclick="location.href='register.html'">Registrarse</button>
+      <button class="btn-secondary">Iniciar Sesión</button>
+      <a href="#buscar"><img src="assets/images/search.png" alt="Buscar" /></a>
+      <a href="#carrito"><img src="assets/images/shopping-cart.png" alt="Carrito" /></a>
+    </nav>
+  </header>
+
+  <main class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="form-login">
+      <input type="email" id="email" placeholder="Ingresa tu email" required />
+      <input type="password" id="contrasena" placeholder="Ingresa tu contraseña" required />
+      <button type="submit" class="btn-primary">Iniciar Sesión</button>
+      <p id="mensaje-error" style="color: red; display: none;"></p>
+    </form>
+  </main>
+
+
+<footer class="footer">
+    <div class="footer-links">
+      <a href="#">Preguntas Frecuentes</a>
+      <a href="#">Política de Privacidad</a>
+      <a href="#">Términos de Servicio</a>
+    </div>
+    <p>&copy; 2025 Nanai Kit. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="assets/js/login.js"></script>
+
+  </body>
+</html>

@@ -1,3 +1,21 @@
+/* FORCE RESPONSIVE IMAGES */
+.kit-image-container {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  overflow: hidden !important;
+  background: #f0f0f0 !important;
+  height: auto !important;
+}
+
+.kit-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
 .kits-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #E6D7FF 0%, #F0E6FF 50%, #F8F0FF 100%);
@@ -16,12 +34,12 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
 }
 
-
 .kit-image-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;  
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: #f0f0f0;
 }
 
 .kit-image {
@@ -111,20 +129,12 @@
     padding: 1rem;
   }
   
-  .kit-image-container {
-    height: 280px;
-  }
-  
   .kits-page h1.display-4 {
     font-size: 2.5rem;
   }
 }
 
 @media (max-width: 992px) {
-  .kit-image-container {
-    height: 260px;
-  }
-  
   .kit-card {
     margin-bottom: 2rem;
   }
@@ -137,7 +147,6 @@
 @media (max-width: 768px) {
   .kits-page {
     padding: 0.5rem;
-    background: linear-gradient(135deg, #E6D7FF 0%, #F0E6FF 50%, #F8F0FF 100%);
   }
   
   .kits-page .container {
@@ -157,29 +166,6 @@
   
   .kits-page .row.mb-5 {
     margin-bottom: 2rem !important;
-  }
-  
-  .search-container {
-    max-width: 100%;
-    padding: 0 1rem;
-  }
-  
-  .search-input {
-    font-size: 0.95rem;
-    padding: 0.7rem 2.8rem 0.7rem 1rem;
-  }
-  
-  .search-icon {
-    right: 0.8rem;
-  }
-  
-  .search-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .kit-image-container {
-    height: 220px;
   }
   
   .kit-card {
@@ -216,7 +202,6 @@
     border-radius: 10px;
   }
 
-  /* 🔵 Ya no forzamos altura fija aquí */
   .kit-info-section {
     padding: 2rem 1rem;
     margin-top: 2rem;
@@ -266,36 +251,6 @@
   
   .kits-page .row.mb-5 {
     margin-bottom: 1.5rem !important;
-  }
-  
-  .search-input {
-    font-size: 0.9rem;
-    padding: 0.6rem 2.5rem 0.6rem 0.8rem;
-  }
-  
-  .search-icon {
-    right: 0.8rem;
-  }
-  
-  .search-icon svg {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .no-results {
-    padding: 1.5rem 1rem;
-  }
-  
-  .no-results h4 {
-    font-size: 1.2rem;
-  }
-  
-  .no-results p {
-    font-size: 0.9rem;
-  }
-  
-  .kit-image-container {
-    height: 200px;
   }
   
   .kit-card {
@@ -382,10 +337,6 @@
     margin-bottom: 1.2rem !important;
   }
   
-  .kit-image-container {
-    height: 180px;
-  }
-  
   .card-body {
     padding: 0.8rem;
   }
@@ -430,13 +381,6 @@
   .info-item p {
     font-size: 0.8rem;
     line-height: 1.3;
-  }
-}
-
-
-@media (min-width: 992px) {
-  .kit-image-container {
-    aspect-ratio: 16 / 9;
   }
 }
 

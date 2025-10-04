@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AddToCartButton from '../../cart/components/AddToCartButton';
+import { getAllKits, formatPrice } from '../../../data/kitsData';
 
 const ProductDetail = ({ product }) => {
   if (!product) return null;
 
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-CL', {
-      style: 'currency',
-      currency: 'CLP',
-      minimumFractionDigits: 0
-    }).format(price);
-  };
+  // Obtener productos relacionados (máximo 3)
+  const allKits = getAllKits();
+  const relatedProducts = allKits
+    .filter(kit => kit.id !== product.id)
+    .slice(0, 3);
 
   return (
     <div className="product-detail">
@@ -26,6 +25,13 @@ const ProductDetail = ({ product }) => {
         
         <div className="product-info-container">
           <h1 className="product-title">{product.name}</h1>
+          
+          {product.nivel && (
+            <div className="product-level mb-3">
+              <span className="badge bg-secondary">{product.nivel}</span>
+            </div>
+          )}
+          
           <p className="product-price">{formatPrice(product.price)}</p>
           
           <div className="product-description">
@@ -61,34 +67,32 @@ const ProductDetail = ({ product }) => {
         </div>
       </div>
       
-      <div className="related-products">
-        <h2>También te puede interesar</h2>
-        <div className="related-products-container">
-          <div className="related-product">
-            <img 
-              src="/assets/images/kitGratitudHome.png" 
-              alt="Kit Gratitud" 
-              className="related-product-image" 
-            />
-            <h3>Kit Gratitud</h3>
-            <Link to="/productos/2" className="btn btn-sm btn-outline-primary">
-              Ver Detalles
-            </Link>
-          </div>
-          
-          <div className="related-product">
-            <img 
-              src="/assets/images/kitDestacadoHome.png" 
-              alt="Kit Destacado" 
-              className="related-product-image" 
-            />
-            <h3>Kit Destacado</h3>
-            <Link to="/productos/3" className="btn btn-sm btn-outline-primary">
-              Ver Detalles
-            </Link>
+      {relatedProducts.length > 0 && (
+        <div className="related-products">
+          <h2>También te puede interesar</h2>
+          <div className="related-products-container">
+            {relatedProducts.map((relatedProduct) => (
+              <div key={relatedProduct.id} className="related-product">
+                <img 
+                  src={relatedProduct.imagen} 
+                  alt={relatedProduct.nombre} 
+                  className="related-product-image" 
+                />
+                <h3>{relatedProduct.nombre}</h3>
+                <p className="related-product-price">
+                  {formatPrice(relatedProduct.precio)}
+                </p>
+                <Link 
+                  to={`/productos/${relatedProduct.id}`} 
+                  className="btn btn-sm btn-outline-primary"
+                >
+                  Ver Detalles
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

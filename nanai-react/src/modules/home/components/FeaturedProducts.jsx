@@ -1,40 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AddToCartButton from '../../cart/components/AddToCartButton';
+import { getAllKits, formatPrice } from '../../../data/kitsData';
 
 const FeaturedProducts = () => {
-  // Datos simulados de productos destacados
-  const featuredProducts = [
-    {
-      id: 1,
-      name: 'Kit Rutina',
-      description: 'Productos esenciales para tu rutina diaria de autocuidado.',
-      image: '/assets/images/kitRutinaHome.png',
-      price: 35000
-    },
-    {
-      id: 2,
-      name: 'Kit Gratitud',
-      description: 'Elementos para practicar la gratitud y mejorar tu bienestar emocional.',
-      image: '/assets/images/kitGratitudHome.png',
-      price: 28000
-    },
-    {
-      id: 3,
-      name: 'Kit Destacado',
-      description: 'Nuestra selección premium de productos para un autocuidado completo.',
-      image: '/assets/images/kitDestacadoHome.png',
-      price: 42000
-    }
-  ];
-
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-CL', {
-      style: 'currency',
-      currency: 'CLP',
-      minimumFractionDigits: 0
-    }).format(price);
-  };
+  // Obtener solo los primeros 3 kits para destacar
+  const featuredProducts = getAllKits().slice(0, 3);
 
   return (
     <section className="featured-products py-5 bg-light">
@@ -47,15 +18,15 @@ const FeaturedProducts = () => {
               <div className="card h-100 border-0 shadow-sm">
                 <div className="featured-image-container">
                   <img 
-                    src={product.image} 
+                    src={product.imagen} 
                     className="card-img-top featured-image" 
-                    alt={product.name} 
+                    alt={product.nombre} 
                   />
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text">{product.description}</p>
-                  <p className="card-text fw-bold">{formatPrice(product.price)}</p>
+                  <h5 className="card-title">{product.nombre}</h5>
+                  <p className="card-text">{product.descripcionBreve}</p>
+                  <p className="card-text fw-bold">{formatPrice(product.precio)}</p>
                   <div className="d-flex justify-content-between mt-3">
                     <Link to={`/productos/${product.id}`} className="btn btn-outline-primary">
                       Ver Detalles

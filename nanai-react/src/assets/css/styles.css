@@ -152,12 +152,12 @@ a[href="/carrito"]:hover img {
 
 .social-icons {
   display: flex;
-  gap: 30px;
+  gap: 100px;
   justify-content: center;
 }
 
 .social-icons a:hover img {
-  filter: brightness(50%) sepia(80%) hue-rotate(250deg);
+  filter: brightness(80%) sepia(80%) hue-rotate(250deg);
 }
 
 .social-icons a {
@@ -197,7 +197,7 @@ a[href="/carrito"]:hover img {
 }
 
 .social-icons img {
-  width: 40px;
+  width: auto;
   height: auto;
 }
 
